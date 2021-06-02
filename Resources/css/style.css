@@ -1,0 +1,624 @@
+
+/* --------------------------------------- */
+/* BASIC SETUP */
+/* --------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+html {
+    background-color: #FFF;
+    color: #555;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+.clearfix {zoom: 1}
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+/* --------------------------------------- */
+/* REUSABLE COMPONENETS */
+/* --------------------------------------- */
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h1 {
+    margin: 0;
+    color: #FFF;
+    font-size: 240%;
+    word-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin: 0 0 30px;
+}
+
+h2:after {
+    content: " ";
+    display: block;
+    height: 2px;
+    background-color: #15a3e9;
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+h3 {
+    font-size: 110%;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.long-copy {
+    line-height: 145%;
+    font-weight: 300;
+    width: 70%;
+    margin: 0 auto;
+}
+
+
+section {
+    padding: 80px 0;
+    font-weight: 300;
+}
+
+.box {
+    padding: 1%;
+}
+
+.box p {
+    font-size: 90%;
+    line-height: 145%;
+}
+
+a:link, a:visited {
+    color: #15a3e9;
+    text-decoration: none;
+    padding: 0 0 1px;
+    border-bottom: 1px solid #15a3e9;
+    transition: all 0.3s;
+}
+
+a:hover, a:active {
+    color: #0a6ea0;
+    border-bottom: 1px solid transparent;
+}
+
+/* --------------------------------------- */
+/* Buttons */
+/* --------------------------------------- */
+
+.btn:link, .btn:visited, input[type=submit] {
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 400;
+    text-decoration: none;
+    border-radius: 8px;
+    color: #f7edd6;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.btn-full:link, .btn-full:visited, input[type=submit] {
+    background-color:  #0a6ea0;
+    border: 1px solid #0a6ea0;
+    margin-right: 15px;
+}
+
+.btn-ghost:link, .btn-ghost:visited {
+    border: 1px solid #0a6ea0;
+    color:  #15a3e9;
+    
+}
+
+.btn:hover, .btn:active, input[type=submit] {
+    background-color: #15a3e9;
+}
+
+.btn-full:hover, .btn-full:active, input[type=submit] {
+    border:1px solid #15a3e9;
+}
+
+.btn-ghost:hover, .btn-ghost:active {
+    border:1px solid #0a6ea0;
+    color: #FFF;
+}
+
+
+
+/* --------------------------------------- */
+/* ICONS */
+/* --------------------------------------- */
+
+.icon-lg {
+    font-size: 200%;
+    color: #15a3e9;
+    margin-left: 35%;
+}
+
+.icon-small {
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    font-size: 120%;
+    color: #0a6ea0;
+    line-height: 120%;
+    vertical-align: middle;
+    margin-top: -5px
+    
+
+}
+
+/* --------------------------------------- */
+/* HEADER */
+/* --------------------------------------- */
+
+header {
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(img/hero.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+.hero-text-box {
+    position: absolute;
+    width: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.logo {
+    margin-top:10px;
+    height: 100px;
+    width: auto;
+    float: left;
+}
+
+.logo-black {
+    display: none;
+    margin: 5px 0;
+    height: 65px;
+    width: auto;
+    float: left;
+}
+
+.main-nav {
+    float: right;
+    list-style: none;
+    margin-top: 35px
+}
+
+.main-nav li {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+.main-nav li a{
+    color: #FFF;
+    text-decoration: none;
+    font-size: 110%;
+    font-weight: 300;
+    padding: 5px 0;
+    border: 2px solid transparent;
+}
+
+.main-nav li a:hover, .main-nav li a:active {
+    border-bottom: 2px solid #15a3e9; 
+    transition: border 0.2s;
+}
+
+.mobile-nav-icon {
+    cursor: pointer;
+    float: right;
+    margin-top: 30px;
+    z-index: 200;
+    color: #FFF;
+    font-size: 200%;
+
+}
+
+.mobile-nav-icon ionicon {
+    color: #fff;
+    font-size: 200%;
+}
+/* Sticky Nav */
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #FFF;
+    opacity: 0.98;
+    box-shadow: 0 2px 2px #b2b2b2;
+    z-index: 100;
+}
+
+.sticky .main-nav {
+    margin-top: 20px;
+}
+
+.sticky .main-nav li a:visited, .sticky .main-nav li a:link {
+    color: #555;
+    padding: 8px 0;
+}
+
+.sticky .logo { display: none;}
+.sticky .logo-black { display: block;}
+
+
+/* --------------------------------------- */
+/* Features */
+/* --------------------------------------- */
+
+.section-features .long-copy {
+    margin-bottom: 30px;
+}
+
+
+/* --------------------------------------- */
+/* Showcase */
+/* --------------------------------------- */
+
+.section-meals {
+    padding: 0;
+}
+
+.meals-showcase {
+    list-style: none;
+    width: 100%;
+}
+
+.meals-showcase li {
+    display: block;
+    float: left;
+    width: 25%;
+}
+
+.meal-photo {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background: #333;
+}
+
+.meal-photo img {
+    opacity: 0.7;
+    width: 100%;
+    height: auto;
+    transform: scale(1.15);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.meal-photo img:hover {
+    transform: scale(1.03);
+    opacity: 1;
+}
+
+
+/* --------------------------------------- */
+/* How it works */
+/* --------------------------------------- */
+
+.section-steps {
+    background-color: #f4f4f4;
+}
+.steps-box:first-child {
+    text-align: right;
+    padding-right: 3%;
+    margin-top: 30px;
+}
+
+.steps-box:last-child {
+    padding-left: 3%;
+    margin-top: 70px;
+}
+
+.app-screen {
+    width: 40%;
+}
+
+.works-step {
+    margin-bottom: 50px;
+}
+
+.works-step:last-of-type {
+    margin-bottom: 80px;
+}
+
+.works-step div {
+    color: #0a6ea0;
+    border: 2px solid #0a6ea0;
+    display: inline-block;
+    border-radius: 50%;
+    height: 55px;
+    width: 55px;
+    text-align: center;
+    padding: 5px;
+    float: left;
+    font-size: 150%;
+    margin-right: 25px;
+}
+
+.btn-app:link, .btn-app:visited {
+    border: none;
+}
+
+.btn-app img {
+    width: auto;
+    height: 55px;
+    margin: 10px;
+}
+
+
+/* --------------------------------------- */
+/* CITIES */
+/* --------------------------------------- */
+
+.box img {
+    width: 100%;
+    height: auto;
+    margin: 0 0 15px;
+}
+
+.city-feature {
+    margin: 0 0 5px;
+}
+
+
+/* --------------------------------------- */
+/* TESTIMONIALS */
+/* --------------------------------------- */
+
+.section-testimonials {
+    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url("img/back-customers.jpg");
+    background-size: cover;
+    color: #FFF;
+    background-attachment: fixed;
+}
+
+blockquote {
+    padding: 2%;
+    font-style: italic;
+    line-height: 145%;
+    position: relative;
+}
+
+blockquote:before {
+    content:"\2018";
+    font-size: 220%;
+    display: block;
+    position: absolute;
+    top: 1px;
+    left: -5px;
+}
+
+cite {
+    font-size: 90%;
+    margin-top: 25px;
+    display: block;
+    position: relative;
+}
+
+cite img {
+    display: block;
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    margin-right: 10px;
+    float: left;
+}
+
+/* --------------------------------------- */
+/* SIGN UP */
+/* --------------------------------------- */
+
+.section-plans {
+    background-color: #f4f4f4;
+}
+
+.plan-box {
+    background-color: #FFF;
+    border-radius: 6px;
+    width: 90%;
+    margin-left: 5%;
+    box-shadow: 0 2px 2px #dfdfdf;
+}
+
+.plan-box div {
+    padding: 15px;
+    border-bottom: 1px solid gainsboro;
+    margin: 0 10px;
+}
+
+.plan-box div:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.plan-box div:last-child {
+    text-align: center;
+    border: none;
+}
+
+.plan-box ul {
+    list-style: none;
+}
+
+.plan-box ul li{
+    padding: 0 5px;
+}
+
+.plan-box ul .disabled{
+    color: #919191;
+}
+
+.plan-price {
+    font-size: 300%;
+    margin: 0 0 10px;
+    font-weight: 200;
+    color: #15a3e9;
+}
+
+.plan-price span {
+    font-size: 35%;
+    font-weight: 300;
+}
+
+.plan-price-meal {
+    font-size: 100%;
+}
+
+
+/* --------------------------------------- */
+/* CONTACT US */
+/* --------------------------------------- */
+
+.contact-form {
+    width: 60%;
+    margin: 0 auto;
+}
+
+input[type=text],
+input[type=email],
+select,
+textarea {
+    width: 100%;
+    padding: 7px;
+    border-radius: 3px;
+    outline: 0;
+    border: 1px solid #15a3e9;
+}
+
+textarea {
+    height: 100px;
+}
+
+input[type=checkbox] {
+    margin: 10px 5px 10px 0;
+}
+
+
+/* --------------------------------------- */
+/* FOOTER */
+/* --------------------------------------- */
+
+footer {
+    background-color: #333;
+    padding: 30px;
+    padding-bottom: 10px;
+}
+
+.footer-nav {
+    list-style: none;
+    float: left;
+}
+
+.social-links {
+    list-style: none;
+    float: right;
+}
+
+.footer-nav li:last-child, .social-links li:last-child{
+    margin:0;
+}
+
+.footer-nav li, .social-links li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer-nav li a:link, .footer-nav li a:visited {
+        text-decoration: none;
+        border: 0;
+        border-bottom: 1px solid transparent;
+        color:#15a3e9;
+        font-weight: 300;
+        transition: all 0.3s;
+}
+
+.social-links li a:link, .social-links li a:visited {
+    text-decoration: none;
+    border: 0;
+    font-size: 160%;
+    color: #667e91;
+}
+
+.footer-nav li a:hover, .footer-nav li a:active {
+    color:#63c2f1;
+    border-bottom: 1px solid #63c2f1;
+}
+.logo-facebook,
+.logo-twitter,
+.logo-google,
+.logo-instagram{
+    transition: color 0.3s;
+}
+
+.logo-facebook:hover {
+    color: #3b5998;
+}
+.logo-twitter:hover {
+    color: #00aced;
+}
+.logo-google:hover {
+    color: #dd4b39;
+}
+.logo-instagram:hover {
+    color: #517fa4
+}
+
+
+footer p {
+    color: #dfdfdf;
+    text-align: center;
+    font-size: 90%;
+    margin-top: 30px;
+}
+
+
+/* ANIMATIONS */
+
+.js--wp-1, .js--wp-2,
+.js--wp-3, .js--wp-4 {
+    opacity: 0;
+    animation-duration: 1s;
+}
+
+.js--wp-4 {
+    animation-duration: 1s;
+}
+
+.js--wp-1.animated, .js--wp-2.animated,
+.js--wp-3.animated, .js--wp-4.animated {
+    opacity: 1;
+}
